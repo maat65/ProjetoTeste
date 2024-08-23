@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/assets/sun.svg);
+}
+
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  */
+
+  /*background: color image repeat position/size*/
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+/* 
+display: none; some com a imagem
+display: block; pegará toda largura possível
+display: inline; imagem ja é inline
+*/
+
+/*CSS-TRICKS.COM*/
+
+/* 
+margin: top right bottom left (Relógio)
+margin: top right&left bottom 
+margin: top&bottom right&left
+*/
+
+#container {
+  width: 360px;
+  /*border: 1px solid red;*/
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+/*a {
+  display: block;
+}*/
+
+/* Profile */
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+  border-radius: 30%;
+  /*margin: auto;*/
+}
+
+#profile p {
+  font-weight: 500;
+  /*font-size: 16px; Por padrão os navegadores ja possuem font size 16, desnecessário*/
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/* switch */
+
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/*link - lista*/
+
+ul {
+  /*border: 1px solid red;*/
+  list-style: none; /*Retira a marcação no inicio dos elementos
+  /*flex-direction: row; Não é necessário por ser padrão*/
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+ul li a {
+  display: flex;
+  justify-content: center; /*Faz com que o texto centralize*/
+  align-items: center; /* Centraliza o texto verticalmente*/
+
+  padding: 16px 24px;
+
+  background: var(--surface-color); /*Fundo dos botões*/
+  border: 1px solid var(--stroke-color); /*Cor da borda dos elementos*/
+  border-radius: 8px; /* Arredondamento da borda dos elementos*/
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); /*Usado em casos de necessidade por conta do safari*/
+
+  text-decoration: none; /*Usado para retirar o sublinhamento*/
+  font-weight: 500; /*Grossura da fonte*/
+
+  transition: background 0.2s;
+}
+
+/*Pseudo-selector
+Visual ao passar o mouse no botão*/
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/* Social Links */
+#social-links {
+  display: flex;
+  justify-content: center;
+
+  gap: 16px;
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+/*Centralizar ao passar o mouse no icone*/
+#social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+/*Cor e borda redonda*/
+#social-links a:hover {
+  background: var(--highlight-color);
+  padding: 16px;
+
+  border-radius: 50%;
+}
+
+footer {
+  padding: 12px 0;
+  text-align: center;
+  font-size: 14px;
+}
