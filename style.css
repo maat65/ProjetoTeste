@@ -89,7 +89,7 @@ margin: top&bottom right&left
 
 #switch {
   position: relative;
-  
+
   width: 64px;
 
   margin: 4px auto;
@@ -135,6 +135,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  padding: 24px 0;
 }
 
 ul li a {
@@ -149,7 +150,9 @@ ul li a {
   border-radius: 8px; /* Arredondamento da borda dos elementos*/
 
   backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px); /*Usado em casos de necessidade por conta do safari*/
+  -webkit-backdrop-filter: blur(
+    4px
+  ); /*Usado em casos de necessidade por conta do safari*/
 
   text-decoration: none; /*Usado para retirar o sublinhamento*/
   font-weight: 500; /*Grossura da fonte*/
