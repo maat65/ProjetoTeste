@@ -1,7 +1,7 @@
 <h1 align="center"> Projeto HTML CSS JS</h1>
 
 <p align="center">
-Programa feito para teste sobre parque mirante
+Programa feito para teste sobre Backstage Mirante
 </p>
 
 <p align="center">
